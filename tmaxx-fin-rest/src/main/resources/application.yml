@@ -1,0 +1,41 @@
+spring:
+  profiles: dev
+xinerji:
+  jms:
+    username: JMS Username
+    password: somepass-DEV
+    url: http://jms11.org
+  database:
+    url: jdbc:postgresql://185.198.198.74:5432/cargomax
+    username: postgres
+    password: x1n3rj1xnrj
+    driver: org.postgresql.Driver
+
+
+---
+spring:
+  profiles: test
+xinerji:
+  jms:
+    username: JMS Username
+    password: somepass-TEST
+    url: http://jms11.org
+  database:
+    url: jdbc:postgresql://185.198.198.74:5432/cargomax
+    username: postgres
+    password: x1n3rj1xnrj
+    driver: org.postgresql.Driver
+
+---
+spring:
+  profiles: prod
+xinerji:
+  jms:
+    username: JMS Username
+    password: somepass-PROD
+    url: http://jms11.org
+  database:
+    url: jdbc:postgresql://185.198.198.74:5432/cargomax
+    username: postgres
+    password: x1n3rj1xnrj
+    driver: org.postgresql.Driver
