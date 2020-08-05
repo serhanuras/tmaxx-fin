@@ -1,7 +1,9 @@
 package com.xinerji.tmaxxfinservices.implementations;
 
 import com.xinerji.tmaxxfindata.model.AccountingPlan;
+import com.xinerji.tmaxxfinservices.expections.ResourceNotFoundException;
 import com.xinerji.tmaxxfinservices.interfaces.AccountingPlanService;
+import javassist.NotFoundException;
 import org.springframework.stereotype.Service;
 import com.xinerji.tmaxxfindata.repositories.AccountingPlanRepository;
 
@@ -58,6 +60,12 @@ public class AccountingPlanServiceImp  implements AccountingPlanService {
 
     @Override
     public List<AccountingPlan> findByFirmId(long id) {
+        //TODO check if company exists. not exists than throw not found exception.
+
+        /*if(!isFirmExists){
+            throw new ResourceNotFoundException();
+        }*/
+
         return this.accountingPlanRepository.findByFirmId(id);
     }
 }

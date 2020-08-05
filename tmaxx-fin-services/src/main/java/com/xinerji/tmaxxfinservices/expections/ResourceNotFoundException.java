@@ -1,4 +1,4 @@
-package com.xinerji.tmaxxfinrest.exceptions;
+package com.xinerji.tmaxxfinservices.expections;
 
 public class ResourceNotFoundException extends RuntimeException{
 

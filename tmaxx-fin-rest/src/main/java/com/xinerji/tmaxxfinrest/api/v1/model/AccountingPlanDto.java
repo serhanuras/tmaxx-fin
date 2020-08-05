@@ -1,5 +1,6 @@
 package com.xinerji.tmaxxfinrest.api.v1.model;
 
+import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -8,6 +9,7 @@ import javax.persistence.Column;
 @Data
 public class AccountingPlanDto {
 
+    @ApiModelProperty(value="This is the id of accounting plan", required = false)
     private Long id;
 
     private String code;

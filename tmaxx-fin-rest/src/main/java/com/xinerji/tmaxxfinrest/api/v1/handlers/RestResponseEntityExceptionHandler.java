@@ -1,6 +1,6 @@
 package com.xinerji.tmaxxfinrest.api.v1.handlers;
 
-import com.xinerji.tmaxxfinrest.exceptions.ResourceNotFoundException;
+import com.xinerji.tmaxxfinservices.expections.ResourceNotFoundException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
