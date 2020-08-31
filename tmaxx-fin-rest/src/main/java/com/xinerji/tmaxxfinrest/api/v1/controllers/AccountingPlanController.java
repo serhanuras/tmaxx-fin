@@ -2,6 +2,7 @@ package com.xinerji.tmaxxfinrest.api.v1.controllers;
 
 import com.xinerji.tmaxxfindto.v1.AccountingPlanDto;
 import com.xinerji.tmaxxfinrest.api.v1.mapper.AccountingPlanMapper;
+import com.xinerji.tmaxxfinrest.data.model.AccountingPlan;
 import com.xinerji.tmaxxfinrest.services.interfaces.AccountingPlanService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -43,12 +44,13 @@ public class AccountingPlanController {
                     message = "Resource Not Found")
     }
     )
-    @GetMapping("/by-firm-id/{id}")
+    @GetMapping("/by-firm-id/{id}/{accountingYear}/{accountLevel}/{parentAccount}")
     @ResponseStatus(HttpStatus.OK)
-    public List<AccountingPlanDto> getAccountingPlanByFirmId(@PathVariable Long id){
+    public List<AccountingPlan> getAccountingPlanByFirmId(@PathVariable Long id,
+                                                          @PathVariable long accountingYear,
+                                                          @PathVariable long accountLevel,
+                                                          @PathVariable String parentAccount){
 
-        return accountingPlanService.findByFirmId(id)
-                .stream().map(accountingPlanMapper::fromAccountingPlan)
-                .collect(Collectors.toList());
+        return accountingPlanService.findByFirmId(id,accountingYear,accountLevel,parentAccount);
     }
 }

@@ -5,6 +5,9 @@ import lombok.Data;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @Entity
@@ -58,5 +61,4 @@ public class AccountingPlan extends BaseEntity {
 
     @Column(name="is_vip")
     private Boolean isVip;
-
 }

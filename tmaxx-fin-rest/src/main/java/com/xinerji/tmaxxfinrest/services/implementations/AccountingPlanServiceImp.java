@@ -5,10 +5,7 @@ import com.xinerji.tmaxxfinrest.data.repositories.AccountingPlanRepository;
 import com.xinerji.tmaxxfinrest.services.interfaces.AccountingPlanService;
 import org.springframework.stereotype.Service;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 
 @Service
 public class AccountingPlanServiceImp  implements AccountingPlanService {
@@ -56,14 +53,53 @@ public class AccountingPlanServiceImp  implements AccountingPlanService {
 
     }
 
+
+
     @Override
-    public List<AccountingPlan> findByFirmId(long id) {
+    public List<AccountingPlan> findByFirmId(long id, long accountingYear, long accountingLevel, String parentAccount) {
         //TODO check if company exists. not exists than throw not found exception.
 
-        /*if(!isFirmExists){
-            throw new ResourceNotFoundException();
-        }*/
+        if(parentAccount!=null && parentAccount.equals("root")){
+            parentAccount = null;
+        }
 
-        return this.accountingPlanRepository.findByFirmId(id);
+        List<AccountingPlan> accountingPlans = this.accountingPlanRepository.findByFirmId(id, accountingYear, accountingLevel, parentAccount);
+
+        return accountingPlans;
     }
+
+    /*
+    public List<AccountingPlan> findByFirmId(long id, long accountingYear) {
+        //TODO check if company exists. not exists than throw not found exception.
+
+        int maxLevelIndex = this.accountingPlanRepository.getMaxAccountingLevel(id, accountingYear);
+        ArrayList<AccountingPlan>[] accountingPlanArrayList = new  ArrayList[maxLevelIndex];
+
+        List<AccountingPlan> accountingPlanServices = this.accountingPlanRepository.findByFirmId(id, accountingYear);
+
+        accountingPlanServices.forEach(accountingPlan->{
+            if(accountingPlanArrayList[accountingPlan.getAccountLevel().intValue()-1]==null)
+                accountingPlanArrayList[accountingPlan.getAccountLevel().intValue()-1] = new ArrayList<AccountingPlan>();
+
+            accountingPlanArrayList[accountingPlan.getAccountLevel().intValue()-1].add(accountingPlan);
+        });
+
+        for(int i=maxLevelIndex-1;i>0;i--) {
+            accountingPlanArrayList[i].forEach(accountingPlan -> {
+                int parentIndex = accountingPlan.getAccountLevel().intValue() - 2;
+                accountingPlanArrayList[parentIndex].forEach(parentAccountPlan -> {
+                    if (parentAccountPlan.getCode().equals(accountingPlan.getParentAccount())) {
+                        parentAccountPlan.setSubAccountingPlan(accountingPlan);
+                        return;
+                    }
+                });
+            });
+            accountingPlanArrayList[i].clear();
+        }
+
+        return accountingPlanArrayList[0];
+    }
+     */
+
+
 }

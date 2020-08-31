@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import javax.persistence.Column;
+import java.util.List;
 
 @Data
 public class AccountingPlanDto {
@@ -45,4 +46,5 @@ public class AccountingPlanDto {
     private String groupCode;
 
     private Boolean isVip;
+
 }

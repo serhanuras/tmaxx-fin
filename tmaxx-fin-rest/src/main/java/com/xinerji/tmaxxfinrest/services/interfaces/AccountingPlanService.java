@@ -8,6 +8,11 @@ import java.util.List;
 @Service
 public interface AccountingPlanService extends CrudService<AccountingPlan,Long>{
 
-    List<AccountingPlan> findByFirmId(long id);
+    List<AccountingPlan> findByFirmId(long id, long accountingYear, long accountingLevel, String parentAccount);
+
+
+
+
+
 
 }

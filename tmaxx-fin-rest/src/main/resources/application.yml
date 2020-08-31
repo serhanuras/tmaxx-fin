@@ -6,9 +6,9 @@ xinerji:
     password: somepass-DEV
     url: http://jms11.org
   database:
-    url: jdbc:postgresql://***
+    url: jdbc:postgresql://185.198.198.74:5432/cargomax
     username: postgres
-    password: ***
+    password: x1n3rj1xnrj
     driver: org.postgresql.Driver
 
 
@@ -21,9 +21,9 @@ xinerji:
     password: somepass-TEST
     url: http://jms11.org
   database:
-    url: jdbc:postgresql://***
+    url: jdbc:postgresql://185.198.198.74:5432/cargomax
     username: postgres
-    password: ***
+    password: x1n3rj1xnrj
     driver: org.postgresql.Driver
     
 ---
@@ -35,7 +35,7 @@ xinerji:
     password: somepass-PROD
     url: http://jms11.org
   database:
-    url: jdbc:postgresql://***
+    url: jdbc:postgresql://185.198.198.74:5432/cargomax
     username: postgres
-    password: ***
+    password: x1n3rj1xnrj
     driver: org.postgresql.Driver

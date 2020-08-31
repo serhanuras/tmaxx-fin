@@ -23,9 +23,7 @@ public class DataLoader implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        List<AccountingPlan> accountingPlans =this.accountingPlanService.findByFirmId(1);
 
-        System.out.println(((List) accountingPlans).size());
 
     }
 }
