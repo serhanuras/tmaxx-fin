@@ -1,11 +1,9 @@
-package com.xinerji.tmaxxfinservices.implementations;
+package com.xinerji.tmaxxfinrest.services.implementations;
 
-import com.xinerji.tmaxxfindata.model.AccountingPlan;
-import com.xinerji.tmaxxfinservices.expections.ResourceNotFoundException;
-import com.xinerji.tmaxxfinservices.interfaces.AccountingPlanService;
-import javassist.NotFoundException;
+import com.xinerji.tmaxxfinrest.data.model.AccountingPlan;
+import com.xinerji.tmaxxfinrest.data.repositories.AccountingPlanRepository;
+import com.xinerji.tmaxxfinrest.services.interfaces.AccountingPlanService;
 import org.springframework.stereotype.Service;
-import com.xinerji.tmaxxfindata.repositories.AccountingPlanRepository;
 
 import java.util.HashSet;
 import java.util.List;

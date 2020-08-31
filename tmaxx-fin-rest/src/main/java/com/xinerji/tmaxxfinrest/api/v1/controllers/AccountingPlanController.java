@@ -1,8 +1,8 @@
 package com.xinerji.tmaxxfinrest.api.v1.controllers;
 
+import com.xinerji.tmaxxfindto.v1.AccountingPlanDto;
 import com.xinerji.tmaxxfinrest.api.v1.mapper.AccountingPlanMapper;
-import com.xinerji.tmaxxfinrest.api.v1.model.AccountingPlanDto;
-import com.xinerji.tmaxxfinservices.interfaces.AccountingPlanService;
+import com.xinerji.tmaxxfinrest.services.interfaces.AccountingPlanService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;

@@ -1,4 +1,4 @@
-package com.xinerji.tmaxxfinrest.api.v1.model;
+package com.xinerji.tmaxxfindto.v1;
 
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;

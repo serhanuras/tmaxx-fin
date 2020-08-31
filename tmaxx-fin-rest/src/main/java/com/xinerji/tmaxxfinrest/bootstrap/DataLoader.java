@@ -1,14 +1,14 @@
 package com.xinerji.tmaxxfinrest.bootstrap;
 
 
-import com.xinerji.tmaxxfindata.model.AccountingPlan;
+import com.xinerji.tmaxxfinrest.data.model.AccountingPlan;
+import com.xinerji.tmaxxfinrest.services.interfaces.AccountingPlanService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-import com.xinerji.tmaxxfinservices.interfaces.*;
 
 import java.util.List;
-import java.util.Set;
+
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -25,7 +25,7 @@ public class DataLoader implements CommandLineRunner {
 
         List<AccountingPlan> accountingPlans =this.accountingPlanService.findByFirmId(1);
 
-        System.out.println(accountingPlans.size());
+        System.out.println(((List) accountingPlans).size());
 
     }
 }

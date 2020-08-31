@@ -1,9 +1,8 @@
 package com.xinerji.tmaxxfinrest.api.v1.mapper;
 
-import com.xinerji.tmaxxfindata.model.AccountingPlan;
-import com.xinerji.tmaxxfinrest.api.v1.model.AccountingPlanDto;
+import com.xinerji.tmaxxfindto.v1.*;
+import com.xinerji.tmaxxfinrest.data.model.*;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
 @Mapper

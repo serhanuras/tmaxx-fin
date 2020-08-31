@@ -1,4 +1,4 @@
-package com.xinerji.tmaxxfinservices.interfaces;
+package com.xinerji.tmaxxfinrest.services.interfaces;
 
 import java.util.Set;
 

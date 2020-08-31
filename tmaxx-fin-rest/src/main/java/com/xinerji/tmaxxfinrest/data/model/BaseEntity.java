@@ -1,4 +1,4 @@
-package com.xinerji.tmaxxfindata.model;
+package com.xinerji.tmaxxfinrest.data.model;
 
 import lombok.Data;
 
@@ -13,5 +13,8 @@ public class BaseEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name="id")
     private Long id;
+
+    @Column(name="firmid")
+    private Long firmId;
 
 }

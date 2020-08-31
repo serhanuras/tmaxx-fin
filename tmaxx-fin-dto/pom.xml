@@ -7,9 +7,11 @@
         <groupId>com.xinerji</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
+
+
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>tmaxx-fin-services</artifactId>
+    <artifactId>tmaxx-fin-dto</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -18,9 +20,13 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.xinerji</groupId>
-            <artifactId>tmaxx-fin-data</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${springfox-swagger.version}</version>
         </dependency>
     </dependencies>
 
@@ -29,8 +35,15 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.3.0.RELEASE</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
-
 </project>
