@@ -7,7 +7,7 @@ import javax.validation.constraints.NotBlank;
 
 @Getter
 @Setter
-public class LoginRequest {
+public class LoginDto {
 
     @NotBlank
     private String email;

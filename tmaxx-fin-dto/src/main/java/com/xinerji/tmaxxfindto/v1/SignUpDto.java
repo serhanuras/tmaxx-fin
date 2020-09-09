@@ -9,7 +9,7 @@ import javax.validation.constraints.Size;
 
 @Getter
 @Setter
-public class SignUpRequest {
+public class SignUpDto {
     @NotBlank
     @Size(min = 4, max = 40)
     private String name;

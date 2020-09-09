@@ -5,11 +5,11 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class JwtAuthenticationResponse {
+public class JwtAuthenticationDto {
     private String accessToken;
     private String tokenType = "Bearer";
 
-    public JwtAuthenticationResponse(String accessToken) {
+    public JwtAuthenticationDto(String accessToken) {
         this.accessToken = accessToken;
     }
 }

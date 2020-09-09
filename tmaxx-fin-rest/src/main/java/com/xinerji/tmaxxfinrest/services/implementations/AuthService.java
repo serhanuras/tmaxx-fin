@@ -1,8 +1,8 @@
 package com.xinerji.tmaxxfinrest.services.implementations;
 
-import com.xinerji.tmaxxfindto.v1.JwtAuthenticationResponse;
-import com.xinerji.tmaxxfindto.v1.LoginRequest;
-import com.xinerji.tmaxxfindto.v1.SignUpRequest;
+import com.xinerji.tmaxxfindto.v1.JwtAuthenticationDto;
+import com.xinerji.tmaxxfindto.v1.LoginDto;
+import com.xinerji.tmaxxfindto.v1.SignUpDto;
 import com.xinerji.tmaxxfinrest.data.model.Role;
 import com.xinerji.tmaxxfinrest.data.model.RoleName;
 import com.xinerji.tmaxxfinrest.data.model.User;
@@ -43,7 +43,7 @@ public class AuthService {
         this.tokenProvider = tokenProvider;
     }
 
-    public JwtAuthenticationResponse authenticateUser(LoginRequest loginRequest) {
+    public JwtAuthenticationDto authenticateUser(LoginDto loginRequest) {
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
                         loginRequest.getEmail(),
@@ -59,10 +59,10 @@ public class AuthService {
 
         log.info("User with [email: {}] has logged in", userPrincipal.getEmail());
 
-        return new JwtAuthenticationResponse(jwt);
+        return new JwtAuthenticationDto(jwt);
     }
 
-    public Long registerUser(SignUpRequest signUpRequest) {
+    public Long registerUser(SignUpDto signUpRequest) {
 
         if(userRepository.existsByEmail(signUpRequest.getEmail())) {
             throw new ConflictException("Email [email: " + signUpRequest.getEmail() + "] is already taken");
