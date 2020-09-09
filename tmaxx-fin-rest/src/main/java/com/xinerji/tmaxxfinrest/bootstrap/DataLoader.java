@@ -1,22 +1,21 @@
 package com.xinerji.tmaxxfinrest.bootstrap;
 
 
-import com.xinerji.tmaxxfinrest.data.model.AccountingPlan;
-import com.xinerji.tmaxxfinrest.services.interfaces.AccountingPlanService;
+import com.xinerji.tmaxxfinrest.services.interfaces.IAccountingPlanService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
-
 
 @Component
+@Slf4j
 public class DataLoader implements CommandLineRunner {
 
-    private final AccountingPlanService accountingPlanService;
+    private final IAccountingPlanService accountingPlanService;
 
     @Autowired
-    public DataLoader(AccountingPlanService accountingPlanService) {
+    public DataLoader(IAccountingPlanService accountingPlanService) {
         this.accountingPlanService = accountingPlanService;
     }
 

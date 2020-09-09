@@ -3,6 +3,7 @@ package com.xinerji.tmaxxfinrest.expections;
 public class ResourceNotFoundException extends RuntimeException {
 
     public ResourceNotFoundException() {
+        super();
     }
 
     public ResourceNotFoundException(String message) {

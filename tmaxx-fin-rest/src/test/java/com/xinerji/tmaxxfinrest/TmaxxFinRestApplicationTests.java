@@ -1,8 +1,7 @@
 package com.xinerji.tmaxxfinrest;
 
 import com.xinerji.tmaxxfinrest.data.model.AccountingPlan;
-import com.xinerji.tmaxxfinrest.data.repositories.AccountingPlanRepository;
-import com.xinerji.tmaxxfinrest.services.interfaces.AccountingPlanService;
+import com.xinerji.tmaxxfinrest.services.interfaces.IAccountingPlanService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class TmaxxFinRestApplicationTests {
 
     @Autowired
-    private AccountingPlanService accountingPlanService;
+    private IAccountingPlanService accountingPlanService;
 
     @Test
     void contextLoads() {
@@ -28,9 +27,25 @@ class TmaxxFinRestApplicationTests {
 
     @Test
     void findByFirmId() throws Exception{
-       List<AccountingPlan> accountingPlanList= accountingPlanService.findByFirmId(1,2020, 1, "");
+       List<AccountingPlan> accountingPlanList =
+               accountingPlanService.findByFirmId(1,2020, 1, "");
+
 
         assertNotEquals(accountingPlanList.size(),0);
+    }
+
+    @Test
+    void insertAccountingPlan() throws  Exception{
+        AccountingPlan accountingPlan = new AccountingPlan();
+        accountingPlan.setParentAccount("86");
+        accountingPlan.setCode("86 03");
+        accountingPlan.setAccountName("serhans account");
+
+        AccountingPlan insertAccountingPlan =accountingPlanService.insertAccountingPlan(accountingPlan);
+
+        assertNotEquals(insertAccountingPlan.getId(),0);
+        assertNotEquals(insertAccountingPlan.getId(), null);
+
     }
 
 }
