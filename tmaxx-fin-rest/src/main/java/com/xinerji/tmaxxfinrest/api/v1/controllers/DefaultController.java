@@ -13,20 +13,19 @@ import java.util.List;
 @RestController
 @RequestMapping(DefaultController.BASE_URL)
 public class DefaultController {
-    public static final String BASE_URL = "/";
+  public static final String BASE_URL = "/";
 
-    @GetMapping()
-    @ResponseStatus(HttpStatus.OK)
-    @ApiOperation(value = "Swagger UI redirection", hidden = true)
-    public void root( HttpServletResponse httpResponse) throws Exception {
-        httpResponse.sendRedirect("/swagger-ui.html");
-    }
+  @GetMapping()
+  @ResponseStatus(HttpStatus.OK)
+  @ApiOperation(value = "Swagger UI redirection", hidden = true)
+  public void root(HttpServletResponse httpResponse) throws Exception {
+    httpResponse.sendRedirect("/swagger-ui.html");
+  }
 
-    @GetMapping("/swagger")
-    @ResponseStatus(HttpStatus.OK)
-    @ApiOperation(value = "Swagger UI redirection", hidden = true)
-    public void swagger( HttpServletResponse httpResponse) throws Exception {
-        httpResponse.sendRedirect("/swagger-ui.html");
-    }
-
+  @GetMapping("/swagger")
+  @ResponseStatus(HttpStatus.OK)
+  @ApiOperation(value = "Swagger UI redirection", hidden = true)
+  public void swagger(HttpServletResponse httpResponse) throws Exception {
+    httpResponse.sendRedirect("/swagger-ui.html");
+  }
 }

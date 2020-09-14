@@ -30,7 +30,7 @@ xinerji:
   jwt:
     secret: JWTSuperSecretKey
     expirationInMs: 604800000
-    
+
 ---
 spring:
   profiles: prod

@@ -8,36 +8,36 @@ import javax.persistence.Table;
 
 @Data
 @Entity
-@Table(name="firms")
+@Table(name = "firms")
 public class Firm extends BaseEntity {
 
-    @Column(name="code")
-    private String code;
+  @Column(name = "code")
+  private String code;
 
-    @Column(name="name")
-    private String name;
+  @Column(name = "name")
+  private String name;
 
-    @Column(name="port")
-    private int port;
+  @Column(name = "port")
+  private int port;
 
-    @Column(name="title")
-    private String title;
+  @Column(name = "title")
+  private String title;
 
-    @Column(name="isgl")
-    private boolean isGl;
+  @Column(name = "isgl")
+  private boolean isGl;
 
-    @Column(name="address")
-    private String address;
+  @Column(name = "address")
+  private String address;
 
-    @Column(name="postalCode")
-    private String postalCode;
+  @Column(name = "postalCode")
+  private String postalCode;
 
-    @Column(name="district")
-    private String district;
+  @Column(name = "district")
+  private String district;
 
-    @Column(name="city")
-    private String city;
+  @Column(name = "city")
+  private String city;
 
-    @Column(name="coun")
-    private String countryCode;
+  @Column(name = "coun")
+  private String countryCode;
 }

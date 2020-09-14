@@ -14,35 +14,27 @@ import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
-
 @RestController
 @RequestMapping(UserController.BASE_URL)
 @Slf4j
 public class UserController {
-    public static final String BASE_URL = "/api/v1/users";
+  public static final String BASE_URL = "/api/v1/users";
 
-    private UserService userService;
+  private UserService userService;
 
-    @Autowired
-    public UserController(UserService userService) {
-        this.userService = userService;
-    }
+  @Autowired
+  public UserController(UserService userService) {
+    this.userService = userService;
+  }
 
-    @ApiOperation(
-            value = "Returns current user info",
-            notes = "Returns current user info.")
-    @ApiResponses({
-            @ApiResponse(
-                    code = 200,
-                    response = JwtAuthenticationDto.class,
-                    message = "Jwt Token returns"),
-    }
-    )
-    @GetMapping("me")
-    @ResponseStatus(HttpStatus.OK)
-    @PreAuthorize("hasRole('USER')")
-    public UserSummaryDto getCurrentUser(@CurrentUser UserPrincipal currentUser) {
-        return userService.getCurrentUser(currentUser);
-    }
-
+  @ApiOperation(value = "Returns current user info", notes = "Returns current user info.")
+  @ApiResponses({
+    @ApiResponse(code = 200, response = JwtAuthenticationDto.class, message = "Jwt Token returns"),
+  })
+  @GetMapping("me")
+  @ResponseStatus(HttpStatus.OK)
+  @PreAuthorize("hasRole('USER')")
+  public UserSummaryDto getCurrentUser(@CurrentUser UserPrincipal currentUser) {
+    return userService.getCurrentUser(currentUser);
+  }
 }

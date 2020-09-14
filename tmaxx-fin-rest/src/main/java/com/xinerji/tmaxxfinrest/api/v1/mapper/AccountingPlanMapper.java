@@ -10,24 +10,22 @@ import java.util.List;
 @Mapper
 public interface AccountingPlanMapper {
 
+  AccountingPlanMapper INSTANCE = Mappers.getMapper(AccountingPlanMapper.class);
 
-    AccountingPlanMapper INSTANCE = Mappers.getMapper(AccountingPlanMapper.class);
+  /*
+  default AccountingPlanDto fromAccountingPlan(AccountingPlan accountingPlan) {
+      AccountingPlanDto accountingPlanDto = new AccountingPlanDto();
+      //Do some customization for mapping...
 
-    /*
-    default AccountingPlanDto fromAccountingPlan(AccountingPlan accountingPlan) {
-        AccountingPlanDto accountingPlanDto = new AccountingPlanDto();
-        //Do some customization for mapping...
+      return accountingPlanDto;
+  }
+   */
 
-        return accountingPlanDto;
-    }
-     */
+  AccountingPlanDto fromAccountingPlan(AccountingPlan accountingPlan);
 
-    AccountingPlanDto fromAccountingPlan(AccountingPlan accountingPlan);
+  AccountingPlan toAccountingPlan(AccountingPlanDto accountingPlanDto);
 
-    AccountingPlan toAccountingPlan(AccountingPlanDto accountingPlanDto);
+  List<AccountingPlanDto> fromAccountingPlanList(List<AccountingPlan> accountingPlans);
 
-    List<AccountingPlanDto> fromAccountingPlanList(List<AccountingPlan> accountingPlans);
-
-    List<AccountingPlan> toAccountingPlanList(List<AccountingPlanDto> accountingPlanDtos);
-
+  List<AccountingPlan> toAccountingPlanList(List<AccountingPlanDto> accountingPlanDtos);
 }

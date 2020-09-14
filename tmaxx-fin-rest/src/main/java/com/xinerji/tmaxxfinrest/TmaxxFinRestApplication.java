@@ -1,4 +1,5 @@
 package com.xinerji.tmaxxfinrest;
+
 import com.xinerji.tmaxxfinrest.config.ApplicationConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,13 +14,11 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EntityScan("com.xinerji")
 public class TmaxxFinRestApplication {
 
-    public static void main(String[] args) {
+  public static void main(String[] args) {
 
-        ApplicationContext context =
-                SpringApplication.run(TmaxxFinRestApplication.class, args);
+    ApplicationContext context = SpringApplication.run(TmaxxFinRestApplication.class, args);
 
-        ApplicationConfig config =  (ApplicationConfig) context.getBean("applicationConfig");
-        System.out.println("Database Name : " + config.getDatabaseConfig().url);
-    }
-
+    ApplicationConfig config = (ApplicationConfig) context.getBean("applicationConfig");
+    System.out.println("Database Name : " + config.getDatabaseConfig().url);
+  }
 }

@@ -21,44 +21,36 @@ import static org.springframework.http.HttpStatus.OK;
 @RequestMapping(AuthController.BASE_URL)
 @Slf4j
 public class AuthController {
-    public static final String BASE_URL = "/api/v1/auth";
+  public static final String BASE_URL = "/api/v1/auth";
 
-    private AuthService authService;
+  private AuthService authService;
 
-    @Autowired
-    public AuthController(AuthService authService) {
-        this.authService = authService;
-    }
+  @Autowired
+  public AuthController(AuthService authService) {
+    this.authService = authService;
+  }
 
-    @ApiOperation(
-            value = "Login end point which provides JWT token to use other APIs.",
-            notes = "Login end point which provides JWT token to use other APIs.")
-    @ApiResponses({
-            @ApiResponse(
-                    code = 200,
-                    response = JwtAuthenticationDto.class,
-                    message = "Jwt Token returns"),
-    }
-    )
-    @PostMapping("/signin")
-    @ResponseStatus(HttpStatus.OK)
-    public JwtAuthenticationDto login(@Valid @RequestBody LoginDto loginRequest) {
-        return authService.authenticateUser(loginRequest);
-    }
+  @ApiOperation(
+      value = "Login end point which provides JWT token to use other APIs.",
+      notes = "Login end point which provides JWT token to use other APIs.")
+  @ApiResponses({
+    @ApiResponse(code = 200, response = JwtAuthenticationDto.class, message = "Jwt Token returns"),
+  })
+  @PostMapping("/signin")
+  @ResponseStatus(HttpStatus.OK)
+  public JwtAuthenticationDto login(@Valid @RequestBody LoginDto loginRequest) {
+    return authService.authenticateUser(loginRequest);
+  }
 
-    @ApiOperation(
-            value = "Login end point which provides JWT token to use other APIs.",
-            notes = "Login end point which provides JWT token to use other APIs.")
-    @ApiResponses({
-            @ApiResponse(
-                    code = 200,
-                    response = JwtAuthenticationDto.class,
-                    message = "Jwt Token returns"),
-    }
-    )
-    @PostMapping("/signup")
-    @ResponseStatus(HttpStatus.OK)
-    public Long register(@Valid @RequestBody SignUpDto signUpRequest) {
-        return authService.registerUser(signUpRequest);
-    }
+  @ApiOperation(
+      value = "Login end point which provides JWT token to use other APIs.",
+      notes = "Login end point which provides JWT token to use other APIs.")
+  @ApiResponses({
+    @ApiResponse(code = 200, response = JwtAuthenticationDto.class, message = "Jwt Token returns"),
+  })
+  @PostMapping("/signup")
+  @ResponseStatus(HttpStatus.OK)
+  public Long register(@Valid @RequestBody SignUpDto signUpRequest) {
+    return authService.registerUser(signUpRequest);
+  }
 }

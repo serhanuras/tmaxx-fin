@@ -14,43 +14,45 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "_users", uniqueConstraints = {
-        @UniqueConstraint(columnNames = {
-                "email"
-        })
-})
+@Table(
+    name = "_users",
+    uniqueConstraints = {@UniqueConstraint(columnNames = {"email"})})
 @Getter
 @Setter
 @NoArgsConstructor
 public class User implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
-    @NotBlank
-    @Size(max = 40)
-    private String name;
+  @NotBlank
+  @Size(max = 40)
+  private String name;
 
-    @NaturalId
-    @NotBlank
-    @Size(max = 40)
-    @Email
-    private String email;
+  @NaturalId
+  @NotBlank
+  @Size(max = 40)
+  @Email
+  private String email;
 
-    @NotBlank
-    @Size(max = 100)
-    private String password;
+  @NotBlank
+  @Size(max = 100)
+  private String password;
 
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name = "_user_roles",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "role_id"))
-    private Set<Role> roles = new HashSet<>();
+  @ManyToMany(fetch = FetchType.LAZY)
+  @JoinTable(
+      name = "_user_roles",
+      joinColumns = @JoinColumn(name = "user_id"),
+      inverseJoinColumns = @JoinColumn(name = "role_id"))
+  private Set<Role> roles = new HashSet<>();
 
-    public User(@NotBlank @Size(max = 40) String name, @NotBlank @Size(max = 40) @Email String email, @NotBlank @Size(max = 100) String password) {
-        this.name = name;
-        this.email = email;
-        this.password = password;
-    }
+  public User(
+      @NotBlank @Size(max = 40) String name,
+      @NotBlank @Size(max = 40) @Email String email,
+      @NotBlank @Size(max = 100) String password) {
+    this.name = name;
+    this.email = email;
+    this.password = password;
+  }
 }

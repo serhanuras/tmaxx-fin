@@ -7,11 +7,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserService {
 
-    public UserSummaryDto getCurrentUser(UserPrincipal userPrincipal) {
-        return UserSummaryDto.builder()
-                .id(userPrincipal.getId())
-                .email(userPrincipal.getEmail())
-                .name(userPrincipal.getName())
-                .build();
-    }
+  public UserSummaryDto getCurrentUser(UserPrincipal userPrincipal) {
+    return UserSummaryDto.builder()
+        .id(userPrincipal.getId())
+        .email(userPrincipal.getEmail())
+        .name(userPrincipal.getName())
+        .build();
+  }
 }

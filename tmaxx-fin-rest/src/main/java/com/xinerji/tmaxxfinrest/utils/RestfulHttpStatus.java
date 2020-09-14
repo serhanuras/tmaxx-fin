@@ -6,7 +6,5 @@ import org.springframework.http.HttpStatus;
 @Data
 public class RestfulHttpStatus {
 
-    private HttpStatus status;
-
-
+  private HttpStatus status;
 }

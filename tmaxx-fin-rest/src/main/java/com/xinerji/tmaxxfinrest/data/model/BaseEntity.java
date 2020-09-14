@@ -9,12 +9,11 @@ import java.io.Serializable;
 @MappedSuperclass
 public class BaseEntity implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name="id")
-    private Long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.SEQUENCE)
+  @Column(name = "id")
+  private Long id;
 
-    @Column(name="firmid")
-    private Long firmId;
-
+  @Column(name = "firmid")
+  private Long firmId;
 }
